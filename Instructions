@@ -1,0 +1,25 @@
+This has been obtained from Thymi website
+
+https://www.thymio.org/en:linuxinstall
+
+And then installed some packages
+Mostly to get dbus working against a framebuffer
+
+$ sudo apt-get install python-dbus
+$ sudo apt-get install dbus
+$ sudo apt-get install dbus-x11
+$ sudo apt-get install xvfb
+
+To get the whole thing working start BlockMagicBox with 
+$ make start 2> logfile.log 
+
+Start framebuffer and asabemedulla
+
+$ Xvfb :1 -screen 0 1x1x8 &  (wd: ~)
+$ asebamedulla -v "ser:device=/dev/ttyACM0" &
+
+Then start ThymioAutomat.py to inspect the logfile of BlockMagicBox
+
+$ python ThymioAutomat.py -f ../BlockMagicBox/logfile.log
+
+Thats it !!
