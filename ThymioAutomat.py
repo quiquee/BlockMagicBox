@@ -92,11 +92,11 @@ if __name__ == '__main__':
                 i = i +1
 
                 if btc and float(btc[0]) > 0:
-                    distance = 100 * float(btc[0])
+                    distance = 1000 * float(btc[0])
                     print "Moving for " + `distance` + " secs"
                     #send motor value to the robot
-                    network.SetVariable("thymio-II", "motor.left.target", [50] )
-                    network.SetVariable("thymio-II", "motor.right.target", [50] )
+                    network.SetVariable("thymio-II", "motor.left.target", [200] )
+                    network.SetVariable("thymio-II", "motor.right.target", [200] )
                     time.sleep(distance)
                     network.SetVariable("thymio-II", "motor.left.target", [0] )
                     network.SetVariable("thymio-II", "motor.right.target", [0] )
