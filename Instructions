@@ -10,10 +10,13 @@ $ sudo apt-get install dbus
 $ sudo apt-get install dbus-x11
 $ sudo apt-get install xvfb
 
+Make sure time is right
 To get the whole thing working start BlockMagicBox with 
+
 $ make start 2> logfile.log 
 
 Start framebuffer and asabemedulla
+export DISPLAY=:1
 
 $ Xvfb :1 -screen 0 1x1x8 &  (wd: ~)
 $ asebamedulla -v "ser:device=/dev/ttyACM0" &
